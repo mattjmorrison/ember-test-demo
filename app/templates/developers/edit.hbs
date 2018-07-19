@@ -1,0 +1,7 @@
+<h3 class="current-dev">{{model.firstName}} {{model.lastName}}</h3>
+<button id="delete" {{action "delete" model}}>Delete</button>
+
+{{input value=model.firstName id='first-name'}}
+{{input value=model.lastName id='last-name'}}
+<button id="save" {{action "update" model}}>Save</button>
+{{outlet}}

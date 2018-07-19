@@ -1,0 +1,7 @@
+
+{{#link-to "developers.create" id="create"}}Add{{/link-to}}
+{{#each model as |dev|}}
+  <div>{{#link-to "developers.edit" dev class="full-name"}}{{dev.firstName}} {{dev.lastName}}{{/link-to}}</div>
+{{/each}}
+
+{{outlet}}

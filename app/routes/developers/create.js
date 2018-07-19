@@ -1,0 +1,14 @@
+import Route from '@ember/routing/route';
+
+export default Route.extend({
+  model() {
+    return this.store.createRecord('developer');
+  },
+  actions: {
+    create(model) {
+      model.save();
+      this.transitionTo('developers');
+
+    }
+  }
+});

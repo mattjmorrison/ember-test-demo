@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'ember-test-demo',
     environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -24,6 +24,9 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
+    ENV['ember-cli-mirage'] = {
+      enabled: false
+    };
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -32,6 +35,9 @@ module.exports = function(environment) {
   }
 
   if (environment === 'test') {
+    ENV['ember-cli-mirage'] = {
+      enabled: true
+    };
     // Testem prefers this...
     ENV.locationType = 'none';
 
